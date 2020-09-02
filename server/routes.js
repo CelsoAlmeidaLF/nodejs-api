@@ -6,7 +6,6 @@ const dbname  = 'main.db';
 router.use(express.json());
 
 // POST => adiciona novos dados no banco de dados
-// data: 07/08/2020 rev.1.0
 router.post("/add", (req, res) => {
     const { id, title, content } = req.body
     let db = new sqlite3.Database(dbname, err => {
@@ -24,7 +23,6 @@ router.post("/add", (req, res) => {
 });
 
 // GET => retorna lista de dados
-// data: 07/08/2020 rev.1.0
 router.get("/view", (req, res) => {
     let db = new sqlite3.Database(dbname, err => {
       if (err){ throw err } console.log("Database start on: " + dbname) });
@@ -36,7 +34,6 @@ router.get("/view", (req, res) => {
  });
 
 // GET/:id =. retorna item pelo seu id
-// data: 07/08/2020 rev.1.0
 router.get("/view/:id", (req, res) => {
   const { id } = req.params
   let db = new sqlite3.Database(dbname, err => {
@@ -49,7 +46,6 @@ router.get("/view/:id", (req, res) => {
  });
 
 // PUT/:id => edita item do banco de dados
-// data: 07/08/2020 rev.1.0
 router.put("/edit/:id", (req, res) => {
    const { id } = req.params
    const { title, content } = req.body
@@ -68,7 +64,6 @@ router.put("/edit/:id", (req, res) => {
   });
 
 // DELETE/:id => apaga item do banco de dados
-// data: 07/08/2020 rev.1.0
 router.delete("/delete/:id", (req, res) => {
     const { id } = req.params
     let db = new sqlite3.Database(dbname, err => {
