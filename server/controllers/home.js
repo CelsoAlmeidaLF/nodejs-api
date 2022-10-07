@@ -4,7 +4,7 @@ import {Business} from '../../app/application.js'
 export class ControllerHome {
 
     constructor(){
-        this.BLL = new Business();
+        this.bll = new Business();
     }
 
     cadastro (req, res) {
