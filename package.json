@@ -1,14 +1,16 @@
 {
   "name": "api-nodejs",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "API com NodeJS",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./server"
+    "dev":"nodemon ./bin",
+    "start": "node ./bin"
   },
   "author": "Systekna <celso.almeida.leite@hotmail.com>",
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.1"
-  }
+  },
+  "type": "module"
 }

@@ -3,8 +3,26 @@ const app = express();
 const routes = require('./routes')
 const port = 8000;
 
-// INIT SERVER
-app.use('/api', routes);
-app.use(function(req, res, next) { res.status(404).redirect('/api') })
+export class ServerExpress{
 
-app.listen(port,() => { console.log("server api on: %d", port) });
+    middleware(){
+        
+    }
+
+    routes(){
+        app.use('/api', routes);
+        app.use(function(req, res, next) { res.status(404).redirect('/api') })
+    }
+
+    openServer(){
+        this.middleware();
+        this.routes();
+        
+        app.listen(port,() => { console.log("server api on: http://localhost:%d", port) });
+    }
+
+}
+
+
+
+
