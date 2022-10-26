@@ -1,12 +1,8 @@
-var express = require('express');
-var router = express.Router();
-const sqlite3 = require('sqlite3');
-const { ControllerHome } = require('../controllers/home');
-const dbname  = 'main.db';
+import express from 'express';
+import ControllerHome from '../controllers/home.js';
 
-router.use(express.json());
-
-let home = ControllerHome();
+const router = express.Router();
+let home = new ControllerHome();
 
 // POST => adiciona novos dados no banco de dados
 router.post("/add", home.cadastro);
@@ -23,4 +19,4 @@ router.put("/edit/:id", home.edit);
 // DELETE/:id => apaga item do banco de dados
 router.delete("/delete/:id", home.delete);
 
-module.exports = router
+export default router;

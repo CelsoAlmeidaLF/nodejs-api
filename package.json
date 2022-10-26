@@ -4,7 +4,7 @@
   "description": "API com NodeJS",
   "main": "index.js",
   "scripts": {
-    "dev":"cls&&nodemon ./bin",
+    "dev": "cls&&nodemon ./bin",
     "start": "cls&&node ./bin"
   },
   "author": "Almeida <https://github.com/CelsoAlmeidaLF>",
@@ -19,6 +19,7 @@
     "braces": "^3.0.2",
     "chokidar": "^3.5.3",
     "concat-map": "^0.0.1",
+    "date-fns": "^2.29.3",
     "debug": "^3.2.7",
     "express": "^4.18.1",
     "fill-range": "^7.0.1",
@@ -41,7 +42,8 @@
     "supports-color": "^5.5.0",
     "to-regex-range": "^5.0.1",
     "touch": "^3.1.0",
-    "undefsafe": "^2.0.5"
+    "undefsafe": "^2.0.5",
+    "uuid": "^9.0.0"
   },
   "type": "module"
 }

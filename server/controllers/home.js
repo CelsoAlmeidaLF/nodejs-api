@@ -1,7 +1,7 @@
 
-import {Business} from '../../app/application.js'
+import Business from '../../app/business.js'
 
-export class ControllerHome {
+export default class ControllerHome {
 
     constructor(){
         this.bll = new Business();

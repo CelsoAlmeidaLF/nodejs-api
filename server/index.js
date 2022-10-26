@@ -1,24 +1,26 @@
-const express = require('express');
+import express from 'express';
+import router from './routers/routes.js'
+
 const app = express();
-const routes = require('./routes')
 const port = 8000;
 
-export class ServerExpress{
+export default class ServerExpress{
 
-    middleware(){
-        
-    }
+    middleware(){       
+        app.use(express.json());
+  }
 
     routes(){
-        app.use('/api', routes);
-        app.use(function(req, res, next) { res.status(404).redirect('/api') })
+        app.use('/api/v1', router);
+        app.use(function(req, res, next) { res.status(404).redirect('/api/v1') })
     }
 
     openServer(){
         this.middleware();
         this.routes();
         
-        app.listen(port,() => { console.log("server api on: http://localhost:%d", port) });
+        app.listen(port,
+            () => { console.log("server api on: http://localhost:%d", port) });
     }
 
 }

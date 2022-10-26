@@ -1,7 +1,7 @@
 
-import {ServerExpress} from '../server/index.js'
+import ServerExpress from '../server/index.js'
 
-export class Application {
+export default class Application {
     constructor(){
         console.clear();
         let server = new ServerExpress();

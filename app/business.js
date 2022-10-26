@@ -1,4 +1,4 @@
-export class Business {
+export default class Business {
     constructor(){
         
     }
