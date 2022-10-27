@@ -1,7 +1,7 @@
 
 import {Data} from '../data/database.js'
 
-export class Repository {
+export default class Repository {
 
     getall(){
         let db = new Data();
